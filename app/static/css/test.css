@@ -1,0 +1,97 @@
+section:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 38px;
+    width: 100%;
+    height: 86%;
+    font-size: 13px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0;
+}
+
+section button {
+  cursor: pointer;
+  display: inline-block;
+  background-color: #d6e2ec;
+  color: black;
+  text-align: center;
+  transition: .25s ease;
+  border: none;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+section div:focus button, button:focus {
+  background-color: #8DA1BF;
+  outline: none;
+}
+
+section button:focus + p, div:focus P {
+    display: block;
+    position: absolute;
+    background-color: #8DA1BF;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+    outline: none;
+    top: 0px;
+    text-align: center;
+    margin-top: 48px;
+}
+
+section p {
+  display: none;
+}
+
+section div {
+  display: inline-block;
+}
+
+section div:focus {
+  outline: none;
+}
+
+section .p {
+  margin-top: 300px;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+
+
+section > div{
+    display: inline-block;
+    position: relative;
+}
+
+section > div > button{
+    border: none;
+    border-radius: 10px;
+    background-color: #ff4373;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+section > div > .message_area{
+    position: absolute;
+    background-color: white;
+    border-top: none;
+    border-radius: 5px;
+    width: 665px;
+    height: 350px;
+    display: none;
+
+}
+
+section > div > .message_area .p_user_x{
+   float: left;
+
+}
+
+section > div > .message_area .p_user_y{
+   float: right;
+}

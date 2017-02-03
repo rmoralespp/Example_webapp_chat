@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block footer %}
+    <footer>
+    <form action="/profile" method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ user_form }}
+        {{ profile_form }}
+        <input type="submit" class="btn btn-success" value="Check">
+
+    </form>
+
+    </footer>
+{% endblock %}

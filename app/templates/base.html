@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" href="{% static "vendors/bootstrap/css/bootstrap.min.css" %}">
+
+
+</head>
+
+
+<body>
+    {% block login %}{% endblock %}
+    {% block nav %}{% endblock %}
+    {% block section %}{% endblock %}
+    {% block aside %}{% endblock %}
+    {% block footer %}{% endblock %}
+    {% block script %}
+        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script src="{% static "vendors/jquery.min.js" %}"></script>
+        <script src="{% static "vendors/bootstrap/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "js/main.js" %}"></script>
+    {% endblock %}
+
+    {% block extra_script %}{% endblock %}
+</body>
+</html>

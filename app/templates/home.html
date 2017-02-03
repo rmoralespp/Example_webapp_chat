@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block nav %}
+    <nav>
+    <div class="nav_logo"><p>CHAT</p></div>
+    <ul>
+        <li class="menu" ><a href="/home"><span class="glyphicon glyphicon-home"></span></a></li>
+        <li class="menu nav_user" id="{{ user.id }}"><a href="/profile" id="{{ user }}"><span class="glyphicon glyphicon-user"></span> {{ user }}</a></li>
+        <li class="menu"><a id="btn_logout" href="/logout"><span class="glyphicon glyphicon-log-out"></span></a></li>
+    </ul>
+    </nav>
+{% endblock %}
+{% block section %}
+    <section>
+        <ul class="nav nav-tabs ">
+
+        </ul>
+
+        <div class="tab-content">
+
+        </div>
+
+        <div class="div_input_chat col-xs-12">
+            <input id="input_chat" class="form-control" placeholder="Write a message...">
+            <button id="btn_input_chat" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
+        </div>
+
+    </section>
+ {% endblock %}
+
+{% block aside %}
+    <aside>
+    {% if users %}
+        <ul id="lista_usuarios">
+            {% for user in users %}
+                {% if user.profile.connected == False %}
+                    <li id="{{ user.id }}"><a data-toggle="tab" href="#{{ user.username }}"><img class="user_picture" src="{% static "img/14479683_1714462668875171_2352282408978810840_n.jpg" %}"><span class="user_username">{{ user.username }}</span><span class="user_line"></span></a></li>
+                {% else %}
+                    <li id="{{ user.id }}"><a data-toggle="tab" href="#{{ user.username }}"><img class="user_picture" src="{% static "img/14479683_1714462668875171_2352282408978810840_n.jpg" %}"><span class="user_username">{{ user.username }}</span><span class="user_line user_conected"></span></a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+    </aside>
+
+{% endblock %}
+{% block footer %}
+ {% endblock %}
+
+
+{% block extra_script %}{% endblock %}
